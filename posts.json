@@ -4,6 +4,14 @@
 			"id": "create-webserver",
 			"date": "July 17, 2017",
 			"title": "Configure Webserver in AWS"
+		}, {
+			"id": "enable-swapfile",
+			"date": "July 24, 2017",
+			"title": "Enable Swapfile in Debian-based OS"
+		}, {
+			"id": "attach-ebs-disk-to-ec2-instance",
+			"date": "July 25, 2017",
+			"title": "Attach EBS Disk to AWS EC2 Instance"
 		}
 	]
 }
