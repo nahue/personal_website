@@ -7,11 +7,19 @@ import React from 'react'
 import styled from 'styled-components'
 import Head from '../components/head'
 import Link from 'next/link';
-import { posts } from '../posts'
-import withLayout from '../hoc/layout';
+import { posts } from '../posts';
+// import preval from 'preval.macro';
+import Layout from '../components/layout';
 
-export default withLayout(() => (
-	<div>
+
+/*const blog_pages = preval`
+	const fs = require('fs');
+	const path = require('path')
+	module.exports = JSON.parse(fs.readFileSync('../posts.json', 'utf8')).posts;
+`*/
+
+export default () => (
+	<Layout>
 		<h1>Blog</h1>
 		<div className="posts">
 			{
@@ -25,8 +33,8 @@ export default withLayout(() => (
 				))
 			}
 		</div>
-	</div>
-));
+	</Layout>
+);
 
 const Post = ({ id, date, title }) => (
   <div className="post">

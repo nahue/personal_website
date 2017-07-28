@@ -10,10 +10,15 @@
     "alias": "nahuelchaves"
   },
   "dependencies": {
+    "babel-macros": "^0.5.2",
+    "babel-plugin-preval": "^1.4.2",
     "babel-plugin-styled-components": "^1.1.4",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "next": "^2.4.7",
+    "preval.macro": "^1.0.1",
     "react": "^15.6.1",
+    "react-burger-menu": "^2.1.4",
     "react-dom": "^15.6.1",
     "react-flexa": "^0.5.0",
     "styled-components": "^2.0.0-17"

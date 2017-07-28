@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import Head from '../../../components/head'
-import withLayout from '../../../hoc/layout';
+import Layout from '../../../components/layout';
 
-export default withLayout(() => (
-	<div>
+export default () => (
+	<Layout>
 		<Head>
 			<title>Enable Swapfile in Debian based VM</title>
 		</Head>
@@ -23,5 +23,5 @@ export default withLayout(() => (
 
 		`}} />
 
-	</div>
-))
+	</Layout>
+)

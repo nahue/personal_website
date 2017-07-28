@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from '../components/head';
-import withLayout from '../hoc/layout';
+import Layout from '../components/layout';
 
 const CVSection = styled.section`
   h2 { font-weight: bold; }
@@ -12,8 +12,8 @@ const CVSection = styled.section`
   }
 `;
 
-const Index = () => (
-  <div>
+export default () => (
+  <Layout>
 		<Head title="Nahuel Chaves" />
 		<h1>Experience</h1>
 
@@ -136,7 +136,5 @@ const Index = () => (
 				</li>
 			</ul>
 		</CVSection>
-	 </div>
-)
-
-export default withLayout(Index);
+	 </Layout>
+);

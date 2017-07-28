@@ -1,7 +1,7 @@
-import withLayout from '../hoc/layout';
+import Layout from '../components/layout';
 
-export default withLayout(() => (
-	<div>
+export default () => (
+	<Layout>
 		<h1>Education</h1>
 		<div>
 			<h2>Highschool</h2>
@@ -15,5 +15,5 @@ export default withLayout(() => (
 				<li><span>Date:</span> November 2003</li>
 			</ul>
 		</div>
-	</div>
-));
+	</Layout>
+);

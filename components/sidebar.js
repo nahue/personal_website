@@ -82,19 +82,6 @@ export default () => (
 
 			<SidebarSubtitle>Senior Software Engineer</SidebarSubtitle>
 		</header>
-		<nav>
-			<ul>
-			<li>
-				<Link href="/"><a>Experience</a></Link>
-			</li>
-			<li>
-				<Link href="/education"><a>Education</a></Link>
-			</li>
-			<li>
-				<Link href="/blog"><a>Blog</a></Link>
-			</li>
-			</ul>
-		</nav>
 		<footer>
 			<SocialNetworks>
 				<ul>
