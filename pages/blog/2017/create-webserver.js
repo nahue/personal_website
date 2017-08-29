@@ -1,3 +1,9 @@
+/*
+slug: create-webserver
+name: Create Webserver in AWS using Ubuntu
+date: July 17, 2017
+*/
+
 import React from 'react'
 import styled from 'styled-components'
 import Head from '../../../components/head'
@@ -38,7 +44,7 @@ export default () => (
 		chmod 755 .ssh/
 		chmod 755 .ssh/web
 		chmod 600 .ssh/authorized_keys
-		usermod -a -G www-data web
+		usermod -g www-data web
 		mkdir /home/web/public_html
 		chown -R www-data:www-data /home/web/public_html
 		cp /var/www/html/index.html /home/web/public_html/
@@ -71,7 +77,7 @@ export default () => (
 
 		&lt;Directory /home/web/public_html/&gt;
 			Options FollowSymLinks
-				AllowOverride None
+			AllowOverride All
 			Require all granted
 		&lt;/Directory&gt;
 

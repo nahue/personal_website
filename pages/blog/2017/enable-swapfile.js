@@ -1,3 +1,8 @@
+/*
+slug: enable-swapfile
+name: Enable Swapfile in Debian based VM
+date: July 24, 2017
+*/
 import React from 'react'
 import styled from 'styled-components'
 import Head from '../../../components/head'

@@ -1,3 +1,9 @@
+/*
+slug: attach-ebs-disk-to-ec2-instance
+name: Attach EBS Disk to AWS EC2 Instance
+date: July 25, 2017
+*/
+
 import React from 'react'
 import styled from 'styled-components'
 import Head from '../../../components/head'

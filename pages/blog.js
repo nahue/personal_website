@@ -8,27 +8,54 @@ import styled from 'styled-components'
 import Head from '../components/head'
 import Link from 'next/link';
 import { posts } from '../posts';
-// import preval from 'preval.macro';
+import preval from 'preval.macro';
 import Layout from '../components/layout';
 
 
-/*const blog_pages = preval`
+const blog_pages = preval`
 	const fs = require('fs');
-	const path = require('path')
-	module.exports = JSON.parse(fs.readFileSync('../posts.json', 'utf8')).posts;
-`*/
+	const path = require('path');
+	const result = [];
+	const blog_path = __dirname + '/blog';
+
+	const blog_pages = fs.readdirSync(blog_path)
+		.filter(file => {
+			return fs
+				.lstatSync(path.join(blog_path,file))
+				.isDirectory()
+		});
+
+	blog_pages.forEach(function(directory) {
+
+		const pages = fs.readdirSync(blog_path + '/' + directory);
+		console.log(pages);
+		pages.forEach((page) => {
+			const data = fs.readFileSync(blog_path + '/' + directory + '/' + page, 'utf8');
+			const lines = data.split('\\n');
+			const slug = lines[1].split(':')[1].trim();
+			const name = lines[2].split(':')[1].trim();
+			const date = lines[3].split(':')[1].trim();
+			result.push({
+				slug,
+				name,
+				date
+			});
+		})
+	});
+	module.exports = result;
+`
 
 export default () => (
 	<Layout>
 		<h1>Blog</h1>
 		<div className="posts">
 			{
-				posts.map(({ id, date, title }) => (
+				blog_pages.map((page) => (
 					<Post
-						id={id}
-						key={id}
-						date={date}
-						title={title}
+						key={blog_pages.indexOf(page)}
+						slug={page.slug}
+						name={page.name}
+						date={page.date}
 					/>
 				))
 			}
@@ -36,10 +63,10 @@ export default () => (
 	</Layout>
 );
 
-const Post = ({ id, date, title }) => (
+const Post = ({ slug, name, date }) => (
   <div className="post">
     <span className="date">{ date }</span>
-    <Link href={`/blog/${new Date(date).getFullYear()}/${id}`}><a>{ title }</a></Link>
+    <Link href={`/blog/${new Date(date).getFullYear()}/${slug}`}><a>{ name }</a></Link>
 
     <style jsx>{`
       .post {
