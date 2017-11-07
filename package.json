@@ -15,14 +15,19 @@
     "babel-plugin-styled-components": "^1.1.4",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "next": "4.1.4",
+    "next": "^4.1.4",
     "preval.macro": "^1.0.1",
     "react": "^16.0.0",
     "react-burger-menu": "2.1.10",
     "react-dom": "16.0.0",
     "react-flexa": "0.8.1",
+    "source-list-map": "^2.0.0",
     "styled-components": "^2.0.0-17"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-duplicate-keys": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1"
+  }
 }
